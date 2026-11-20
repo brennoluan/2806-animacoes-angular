@@ -62,7 +62,7 @@ export const filterTrigger = trigger('filterAnimation', [
             style({
                 offset: 1,
                 opacity: 1,
-                width: '*'
+                width: '*',
             })
         ]))
     ]),
