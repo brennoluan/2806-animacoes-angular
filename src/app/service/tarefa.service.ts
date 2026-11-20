@@ -13,8 +13,7 @@ export class TarefaService {
 
   listar(categoria: string): Observable<Tarefa[]> {
     let params = new HttpParams().appendAll({
-      _sort: 'id',
-      _order: 'desc',
+      _sort: '-id',
     });
     if (categoria) {
       params = params.append('categoria', categoria);
