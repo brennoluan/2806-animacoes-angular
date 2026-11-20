@@ -4,17 +4,34 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-lista-tarefas',
   templateUrl: './lista-tarefas.component.html',
-  styleUrls: ['./lista-tarefas.component.css']
+  styleUrls: ['./lista-tarefas.component.css'],
+  animations: [trigger('highlightedState', [
+    state('default', style({
+      border: '2px solid #B2B6FF',
+    })),
+    state('highlighted', style({
+      border: '4px solid #B2B6FF',
+      filter: 'brightness(92%)',
+    })),
+    transition('default => highlighted', [
+      animate('200ms ease-out', style({
+        transform: 'scale(1.02)'
+      })),
+      animate(200)
+    ]),
+  ])]
 })
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];
   formAberto: boolean = false;
   categoria: string = '';
   validado: boolean = false;
+  indexTarefa: number = -1;
 
   formulario: FormGroup = this.fomBuilder.group({
     id: [0],
@@ -28,7 +45,7 @@ export class ListaTarefasComponent implements OnInit {
     private service: TarefaService,
     private router: Router,
     private fomBuilder: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit(): Tarefa[] {
     this.service.listar(this.categoria).subscribe((listaTarefas) => {
