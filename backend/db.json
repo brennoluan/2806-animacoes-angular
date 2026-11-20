@@ -34,13 +34,6 @@
       "statusFinalizado": true,
       "categoria": "Estudos",
       "prioridade": "Alta"
-    },
-    {
-      "id": null,
-      "descricao": "fuder",
-      "statusFinalizado": false,
-      "categoria": "Casa",
-      "prioridade": "Alta"
     }
   ]
 }
