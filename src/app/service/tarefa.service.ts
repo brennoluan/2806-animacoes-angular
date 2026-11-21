@@ -26,7 +26,7 @@ export class TarefaService {
     });
   }
 
-  criar(tarefa: Tarefa): void {
+  criar(tarefa: Omit<Tarefa, 'id'>): void {
     this.http.post<Tarefa>(this.API, tarefa).subscribe((novaTarefa) => {
       let tarefas = this.tarefasSubject.getValue();
       tarefas.unshift(novaTarefa);
