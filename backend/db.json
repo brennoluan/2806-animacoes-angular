@@ -4,7 +4,7 @@
       "id": "1",
       "descricao": "Ir ao supermercado",
       "categoria": "Casa",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "prioridade": "Baixa"
     },
     {
@@ -18,7 +18,7 @@
       "id": "4",
       "descricao": "Preencher formulário de inscrição",
       "categoria": "Estudos",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "prioridade": "Normal"
     },
     {
@@ -29,10 +29,10 @@
       "prioridade": "Alta"
     },
     {
-      "id": "6",
-      "descricao": "Ler",
-      "statusFinalizado": true,
-      "categoria": "Estudos",
+      "id": null,
+      "descricao": "sadsadasd",
+      "statusFinalizado": false,
+      "categoria": "Casa",
       "prioridade": "Alta"
     }
   ]
